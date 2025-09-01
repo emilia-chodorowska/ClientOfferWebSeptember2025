@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Specjalna - Zestaw Home Essentials</title>
+    
+    <!-- Dołączamy bibliotekę Tailwind CSS do stylizacji -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Dołączamy czcionkę z Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Dodajemy niestandardową czcionkę do projektu */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
+        }
+        /* Style dla bąbelka z ceną, aby uniknąć problemów z pozycjonowaniem w Tailwind */
+        .price-bubble {
+            position: absolute;
+            top: -2.5rem; /* Zwiększona odległość od góry */
+            right: -2.5rem; /* Zwiększona odległość od prawej */
+        }
+        /* Style dla przełącznika ramek */
+        .toggle-checkbox:checked + .toggle-label .toggle-dot {
+            transform: translateX(100%);
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #48bb78; /* Zielony kolor po włączeniu */
+        }
+
+        /* Responsywność dla mniejszych ekranów */
+        @media (max-width: 768px) {
+            .price-bubble {
+                width: 8rem; /* mniejszy bąbelek */
+                height: 8rem;
+                font-size: 1.25rem; /* mniejsza czcionka */
+                top: -1.5rem;
+                right: -1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen py-8">
+
+    <!-- SUWAK DO WŁĄCZANIA/WYŁĄCZANIA RAMEK -->
+    <div class="fixed top-4 left-4 z-50">
+        <label for="toggleBorders" class="flex items-center cursor-pointer">
+            <div class="relative">
+                <input type="checkbox" id="toggleBorders" class="toggle-checkbox sr-only">
+                <div class="toggle-label block bg-gray-600 w-14 h-8 rounded-full transition-colors"></div>
+                <div class="toggle-dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition-transform"></div>
+            </div>
+            <div class="ml-3 text-gray-700 font-semibold">Pokaż ramki</div>
+        </label>
+    </div>
+
+    <!-- GŁÓWNY KONTENER STRONY (BIAŁE TŁO) - Zmniejszone marginesy na mobile -->
+    <div id="main-container" class="relative container max-w-5xl my-8 p-4 sm:p-8 md:p-16 bg-white shadow-xl">
+
+        <!-- GRAFIKI TŁA (LIŚCIE) - umieszczone wewnątrz białego tła -->
+        <img 
+            src="images/liscie-gora.png" 
+            alt="Dekoracyjne liście" 
+            class="absolute top-0 left-0 w-1/3 opacity-40 pointer-events-none"
+        >
+        <img 
+            src="images/liscie-dol.png" 
+            alt="Dekoracyjne liście" 
+            class="absolute bottom-0 right-0 w-1/3 opacity-40 pointer-events-none"
+        >
+
+        <!-- NAGŁÓWEK STRONY - Zmniejszony margines na mobile -->
+        <header id="header-container" class="text-center mb-12 md:mb-20 relative z-10 p-2">
+            <div class="bg-[#d8e4d3] py-4 rounded-lg shadow">
+                 <h1 class="text-3xl md:text-4xl font-bold text-[#4a5c44]">Oferta czerwiec 2025</h1>
+            </div>
+        </header>
+
+        <!-- GŁÓWNA TREŚĆ (dwie kolumny) - na wierzchu liści -->
+        <main id="main-content-container" class="relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 p-2">
+
+            <!-- LEWA KOLUMNA: ZDJĘCIE I PROMOCJA -->
+            <div id="left-column-container" class="flex flex-col space-y-8 p-2">
+                <!-- Kontener na zdjęcie produktu z bąbelkiem cenowym -->
+                <div id="product-image-container" class="relative p-2">
+                    <!-- KONTENER NA SAMĄ GRAFIKĘ -->
+                    <div id="main-image-container" class="bg-gray-50 p-3 rounded-xl shadow-inner">
+                        <img 
+                            src="images/zestaw-olejkow.jpg" 
+                            alt="Zestaw olejków dōTERRA Home Essentials" 
+                            class="w-full rounded-lg shadow-md block"
+                        >
+                    </div>
+                    <div class="price-bubble bg-[#cce2d3] text-gray-800 font-bold text-xl md:text-2xl w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center shadow-lg">
+                        1492,25zł
+                    </div>
+                </div>
+
+                <!-- NOWY KONTENER NA CAŁĄ SEKCJĘ PROMOCJI -->
+                <div id="promo-section-container" class="p-2">
+                    <!-- Zielony box z informacją o promocji - responsywny układ -->
+                    <div id="promo-box-container" class="bg-[#d8e4d3] text-[#4a5c44] p-6 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <!-- Kontener na zdjęcie gratisowego olejku -->
+                        <div id="gratis-image-container" class="bg-white/50 p-2 rounded-lg shadow-inner w-28 h-36 flex items-center justify-center">
+                            <img 
+                                src="images/olejek-gratis.png" 
+                                alt="Gratisowy olejek" 
+                                class="max-w-full max-h-full object-contain"
+                            >
+                        </div>
+                        <!-- NOWY KONTENER NA TEKST PROMOCJI -->
+                        <div id="promo-text-container" class="p-1">
+                             <h2 class="text-xl md:text-2xl font-semibold leading-tight text-center mt-4 sm:mt-0">Promocja 150PV:<br>otrzymaj dōTERRA Air™<br>GRATIS*</h2>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">*(Obowiązuje do 30 czerwca 2025, przy zamówieniu LRP lub pierwszym zamówieniu za 150PV)</p>
+                </div>
+            </div>
+
+            <!-- PRAWA KOLUMNA: ZAWARTOŚĆ ZESTAWU -->
+            <div id="right-column-container" class="flex items-center p-2">
+                <div id="kit-contents-container" class="bg-white p-6 md:p-8 rounded-lg w-full h-fit border-2 border-[#a7c5a9]">
+                    <h3 class="text-center text-xl md:text-2xl font-semibold text-[#4a5c44] mb-6">Zestaw zawiera:</h3>
+                    <!-- Lista olejków - POPRAWIONA responsywna siatka -->
+                    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-2 text-base md:text-lg text-gray-700">
+                        <li>Lemon</li>
+                        <li>Lavender</li>
+                        <li>Frankincense</li>
+                        <li>Peppermint</li>
+                        <li>Oregano</li>
+                        <li>Tea Tree</li>
+                        <li>dōTERRA Air™</li>
+                        <li>ZenGest™</li>
+                        <li>On Guard™</li>
+                        <li>Deep Blue™</li>
+                        <li class="lg:col-span-2">Petal™ Diffuser 2.0</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+        const toggleSwitch = document.getElementById('toggleBorders');
+
+        // Mapa elementów i klas ramek, które mają być przełączane
+        const borderMap = {
+            'main-container': ['border-4', 'border-black'],
+            'header-container': ['border-2', 'border-red-500'],
+            'main-content-container': ['border-2', 'border-blue-500'],
+            'left-column-container': ['border-2', 'border-green-500'],
+            'product-image-container': ['border', 'border-orange-500'],
+            'main-image-container': ['border-2', 'border-cyan-500'],
+            'promo-section-container': ['border-2', 'border-lime-500'],
+            'promo-box-container': ['border', 'border-yellow-500'],
+            'gratis-image-container': ['border-2', 'border-teal-500'],
+            'promo-text-container': ['border-2', 'border-amber-700'], // Nowa brązowa ramka
+            'right-column-container': ['border-2', 'border-purple-500'],
+            'kit-contents-container': ['border-4', 'border-pink-500'],
+        };
+
+        // Funkcja do przełączania widoczności ramek
+        function toggleBorders() {
+            const show = toggleSwitch.checked;
+            for (const id in borderMap) {
+                const element = document.getElementById(id);
+                if (element) {
+                    const classes = borderMap[id];
+                    if (show) {
+                        element.classList.add(...classes);
+                    } else {
+                        element.classList.remove(...classes);
+                    }
+                }
+            }
+        }
+
+        // Nasłuchiwanie na zmianę stanu przełącznika
+        toggleSwitch.addEventListener('change', toggleBorders);
+
+        // Uruchomienie funkcji raz na starcie, aby ustawić początkowy stan (bez ramek)
+        toggleBorders();
+    </script>
+
+</body>
+</html>
