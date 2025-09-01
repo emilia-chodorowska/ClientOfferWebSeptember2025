@@ -81,13 +81,13 @@
             </div>
         </header>
 
-        <!-- GŁÓWNA TREŚĆ (dwie kolumny) - na wierzchu liści -->
-        <main id="main-content-container" class="relative z-10 grid md:grid-cols-2 gap-8 md:gap-12 p-2">
-
-            <!-- LEWA KOLUMNA: ZDJĘCIE I PROMOCJA -->
-            <div id="left-column-container" class="flex flex-col space-y-8 p-2">
-                <!-- Kontener na zdjęcie produktu z bąbelkiem cenowym -->
-                <div id="product-image-container" class="relative p-2">
+        <!-- GŁÓWNA TREŚĆ - NOWY UKŁAD FLEX -->
+        <main id="main-content-container" class="relative z-10 flex flex-col gap-12 p-2">
+            
+            <!-- GÓRNA SEKCJA: ZDJĘCIE I ZAWARTOŚĆ -->
+            <div id="top-section" class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <!-- LEWA KOLUMNA: ZDJĘCIE PRODUKTU -->
+                <div id="product-image-container" class="relative p-2 w-fit justify-self-center">
                     <!-- KONTENER NA SAMĄ GRAFIKĘ -->
                     <div id="main-image-container" class="bg-gray-50 p-3 rounded-xl shadow-inner">
                         <img 
@@ -101,46 +101,59 @@
                     </div>
                 </div>
 
-                <!-- NOWY KONTENER NA CAŁĄ SEKCJĘ PROMOCJI -->
-                <div id="promo-section-container" class="p-2">
-                    <!-- Zielony box z informacją o promocji - responsywny układ -->
-                    <div id="promo-box-container" class="bg-[#d8e4d3] text-[#4a5c44] p-6 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <!-- Kontener na zdjęcie gratisowego olejku -->
-                        <div id="gratis-image-container" class="bg-white/50 p-2 rounded-lg shadow-inner w-28 h-36 flex items-center justify-center">
-                            <img 
-                                src="images/olejek-gratis.png" 
-                                alt="Gratisowy olejek" 
-                                class="max-w-full max-h-full object-contain"
-                            >
-                        </div>
-                        <!-- NOWY KONTENER NA TEKST PROMOCJI -->
-                        <div id="promo-text-container" class="p-1">
-                             <h2 class="text-xl md:text-2xl font-semibold leading-tight text-center mt-4 sm:mt-0">Promocja 150PV:<br>otrzymaj dōTERRA Air™<br>GRATIS*</h2>
-                        </div>
+                <!-- PRAWA KOLUMNA: ZAWARTOŚĆ ZESTAWU -->
+                <div id="right-column-container" class="flex items-center p-2">
+                    <div id="kit-contents-container" class="bg-white p-6 md:p-8 rounded-lg w-full h-fit border-2 border-[#a7c5a9]">
+                        <h3 class="text-center text-xl md:text-2xl font-semibold text-[#4a5c44] mb-6">Zestaw zawiera:</h3>
+                        <!-- Lista olejków - POPRAWIONA responsywna siatka -->
+                        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-2 text-base md:text-lg text-gray-700">
+                            <li>Lemon</li>
+                            <li>Lavender</li>
+                            <li>Frankincense</li>
+                            <li>Peppermint</li>
+                            <li>Oregano</li>
+                            <li>Tea Tree</li>
+                            <li>dōTERRA Air™</li>
+                            <li>ZenGest™</li>
+                            <li>On Guard™</li>
+                            <li>Deep Blue™</li>
+                            <li class="lg:col-span-2">Petal™ Diffuser 2.0</li>
+                        </ul>
                     </div>
-                    <p class="text-xs text-gray-500 mt-2 text-center">*(Obowiązuje do 30 czerwca 2025, przy zamówieniu LRP lub pierwszym zamówieniu za 150PV)</p>
                 </div>
             </div>
 
-            <!-- PRAWA KOLUMNA: ZAWARTOŚĆ ZESTAWU -->
-            <div id="right-column-container" class="flex items-center p-2">
-                <div id="kit-contents-container" class="bg-white p-6 md:p-8 rounded-lg w-full h-fit border-2 border-[#a7c5a9]">
-                    <h3 class="text-center text-xl md:text-2xl font-semibold text-[#4a5c44] mb-6">Zestaw zawiera:</h3>
-                    <!-- Lista olejków - POPRAWIONA responsywna siatka -->
-                    <ul class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-2 text-base md:text-lg text-gray-700">
-                        <li>Lemon</li>
-                        <li>Lavender</li>
-                        <li>Frankincense</li>
-                        <li>Peppermint</li>
-                        <li>Oregano</li>
-                        <li>Tea Tree</li>
-                        <li>dōTERRA Air™</li>
-                        <li>ZenGest™</li>
-                        <li>On Guard™</li>
-                        <li>Deep Blue™</li>
-                        <li class="lg:col-span-2">Petal™ Diffuser 2.0</li>
-                    </ul>
+            <!-- DOLNA SEKCJA: PROMOCJA NA PEŁNĄ SZEROKOŚĆ -->
+            <div id="promo-section-container" class="p-2">
+                <!-- Zielony box z informacją o promocji - ZMIENIONY UKŁAD -->
+                <div id="promo-box-container" class="bg-[#d8e4d3] text-[#4a5c44] p-6 rounded-lg flex flex-col items-center justify-center gap-6">
+                    <!-- Tekst promocji -->
+                    <div id="promo-text-container" class="p-1 text-center">
+                         <h2 class="text-xl md:text-2xl font-semibold leading-tight">Promocja 150PV:<br>otrzymaj 5 olejków GRATIS*</h2>
+                    </div>
+
+                    <!-- Kontener na wszystkie gratisowe olejki -->
+                    <div id="all-gratis-container" class="flex flex-wrap justify-center items-end gap-2 p-2">
+                        <!-- Cztery standardowe olejki -->
+                        <div id="gratis-image-1" class="bg-white/50 p-2 rounded-lg shadow-inner w-20 h-28 flex items-center justify-center">
+                            <img src="images/olejek-gratis-1.png" alt="Gratisowy olejek 1" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <div id="gratis-image-2" class="bg-white/50 p-2 rounded-lg shadow-inner w-20 h-28 flex items-center justify-center">
+                            <img src="images/olejek-gratis-2.png" alt="Gratisowy olejek 2" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <div id="gratis-image-3" class="bg-white/50 p-2 rounded-lg shadow-inner w-20 h-28 flex items-center justify-center">
+                            <img src="images/olejek-gratis-3.png" alt="Gratisowy olejek 3" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <div id="gratis-image-4" class="bg-white/50 p-2 rounded-lg shadow-inner w-20 h-28 flex items-center justify-center">
+                            <img src="images/olejek-gratis-4.png" alt="Gratisowy olejek 4" class="max-w-full max-h-full object-contain">
+                        </div>
+                        <!-- Jeden wyższy roll-on -->
+                        <div id="gratis-rollon" class="bg-white/50 p-2 rounded-lg shadow-inner w-20 h-36 flex items-center justify-center">
+                             <img src="images/rollon-gratis.png" alt="Gratisowy roll-on" class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
                 </div>
+                <p class="text-xs text-gray-500 mt-2 text-center">*(Obowiązuje do 30 czerwca 2025, przy zamówieniu LRP lub pierwszym zamówieniu za 150PV)</p>
             </div>
         </main>
 
@@ -154,15 +167,20 @@
             'main-container': ['border-4', 'border-black'],
             'header-container': ['border-2', 'border-red-500'],
             'main-content-container': ['border-2', 'border-blue-500'],
-            'left-column-container': ['border-2', 'border-green-500'],
+            'top-section': ['border-2', 'border-green-500'],
             'product-image-container': ['border', 'border-orange-500'],
             'main-image-container': ['border-2', 'border-cyan-500'],
-            'promo-section-container': ['border-2', 'border-lime-500'],
-            'promo-box-container': ['border', 'border-yellow-500'],
-            'gratis-image-container': ['border-2', 'border-teal-500'],
-            'promo-text-container': ['border-2', 'border-amber-700'], // Nowa brązowa ramka
             'right-column-container': ['border-2', 'border-purple-500'],
             'kit-contents-container': ['border-4', 'border-pink-500'],
+            'promo-section-container': ['border-2', 'border-lime-500'],
+            'promo-box-container': ['border', 'border-yellow-500'],
+            'promo-text-container': ['border-2', 'border-amber-700'],
+            'all-gratis-container': ['border-2', 'border-indigo-500'],
+            'gratis-image-1': ['border', 'border-gray-400'],
+            'gratis-image-2': ['border', 'border-gray-400'],
+            'gratis-image-3': ['border', 'border-gray-400'],
+            'gratis-image-4': ['border', 'border-gray-400'],
+            'gratis-rollon': ['border', 'border-gray-500'],
         };
 
         // Funkcja do przełączania widoczności ramek
@@ -190,3 +208,4 @@
 
 </body>
 </html>
+
