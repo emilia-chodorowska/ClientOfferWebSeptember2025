@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oferta Specjalna - Zestaw Home Essentials</title>
     
-    <!-- Dołączamy bibliotekę Tailwind CSS do stylizacji -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Dołączamy czcionkę z Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,8 +20,8 @@
         /* Style dla bąbelka z ceną, aby uniknąć problemów z pozycjonowaniem w Tailwind */
         .price-bubble {
             position: absolute;
-            top: -2.5rem; /* Zwiększona odległość od góry */
-            right: -2.5rem; /* Zwiększona odległość od prawej */
+            top: -2rem; /* Zwiększona odległość od góry */
+            right: -2rem; /* Zwiększona odległość od prawej */
         }
         /* Style dla przełącznika ramek */
         .toggle-checkbox:checked + .toggle-label .toggle-dot {
@@ -47,7 +45,6 @@
 </head>
 <body class="bg-gray-50 flex items-center justify-center min-h-screen py-8">
 
-    <!-- SUWAK DO WŁĄCZANIA/WYŁĄCZANIA RAMEK -->
     <div class="fixed top-4 left-4 z-50">
         <label for="toggleBorders" class="flex items-center cursor-pointer">
             <div class="relative">
@@ -59,10 +56,8 @@
         </label>
     </div>
 
-    <!-- GŁÓWNY KONTENER STRONY (BIAŁE TŁO) - Zmniejszone marginesy na mobile -->
-    <div id="main-container" class="relative container max-w-5xl my-8 p-4 sm:p-8 md:p-16 bg-white shadow-xl">
+    <div id="main-container" class="relative container max-w-5xl my-4 p-4 sm:p-6 md:p-8 bg-white shadow-xl">
 
-        <!-- GRAFIKI TŁA (LIŚCIE) - umieszczone wewnątrz białego tła -->
         <img 
             src="images/liscie-gora.png" 
             alt="Dekoracyjne liście" 
@@ -74,21 +69,16 @@
             class="absolute bottom-0 right-0 w-1/3 opacity-40 pointer-events-none"
         >
 
-        <!-- NAGŁÓWEK STRONY - Zmniejszony margines na mobile -->
-        <header id="header-container" class="text-center mb-12 md:mb-20 relative z-10 p-2">
+        <header id="header-container" class="text-center mb-8 md:mb-12 relative z-10 p-2">
             <div class="bg-[#d8e4d3] py-4 rounded-lg shadow">
-                 <h1 class="text-3xl md:text-4xl font-bold text-[#4a5c44]">Oferta czerwiec 2025</h1>
+                 <h1 class="text-3xl md:text-4xl font-bold text-[#4a5c44]">Oferta Wrzesień 2025</h1>
             </div>
         </header>
 
-        <!-- GŁÓWNA TREŚĆ - NOWY UKŁAD FLEX -->
-        <main id="main-content-container" class="relative z-10 flex flex-col gap-12 p-2">
+        <main id="main-content-container" class="relative z-10 flex flex-col gap-8 p-2">
             
-            <!-- GÓRNA SEKCJA: ZDJĘCIE I ZAWARTOŚĆ -->
-            <div id="top-section" class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                <!-- LEWA KOLUMNA: ZDJĘCIE PRODUKTU -->
+            <div id="top-section" class="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
                 <div id="product-image-container" class="relative p-2 w-fit justify-self-center">
-                    <!-- KONTENER NA SAMĄ GRAFIKĘ -->
                     <div id="main-image-container" class="bg-gray-50 p-3 rounded-xl shadow-inner">
                         <img 
                             src="images/zestaw-olejkow.jpg" 
@@ -101,12 +91,10 @@
                     </div>
                 </div>
 
-                <!-- PRAWA KOLUMNA: ZAWARTOŚĆ ZESTAWU -->
                 <div id="right-column-container" class="flex items-center p-2">
-                    <div id="kit-contents-container" class="bg-white p-6 md:p-8 rounded-lg w-full h-fit border-2 border-[#a7c5a9]">
-                        <h3 class="text-center text-xl md:text-2xl font-semibold text-[#4a5c44] mb-6">Zestaw zawiera:</h3>
-                        <!-- Lista olejków - POPRAWIONA responsywna siatka -->
-                        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-2 text-base md:text-lg text-gray-700">
+                    <div id="kit-contents-container" class="bg-white p-4 md:p-6 rounded-lg w-full h-fit border-2 border-[#a7c5a9]">
+                        <h3 class="text-center text-xl md:text-2xl font-semibold text-[#4a5c44] mb-4">Zestaw zawiera:</h3>
+                        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-2 text-base md:text-lg text-gray-700">
                             <li>Lemon</li>
                             <li>Lavender</li>
                             <li>Frankincense</li>
@@ -123,18 +111,13 @@
                 </div>
             </div>
 
-            <!-- DOLNA SEKCJA: PROMOCJA NA PEŁNĄ SZEROKOŚĆ -->
             <div id="promo-section-container" class="p-2">
-                <!-- Zielony box z informacją o promocji - ZMIENIONY UKŁAD -->
-                <div id="promo-box-container" class="bg-[#d8e4d3] text-[#4a5c44] p-6 rounded-lg flex flex-col items-center justify-center gap-6">
-                    <!-- Tekst promocji -->
+                <div id="promo-box-container" class="bg-[#d8e4d3] text-[#4a5c44] p-4 rounded-lg flex flex-col items-center justify-center gap-4">
                     <div id="promo-text-container" class="p-1 text-center">
-                         <h2 class="text-xl md:text-2xl font-semibold leading-tight">Promocja 150PV:<br>otrzymaj 5 olejków GRATIS*</h2>
+                         <h2 class="text-xl md:text-2xl font-semibold leading-tight">Promocja 200PV:<br>Otrzymaj pięć olejków ZA DARMO*</h2>
                     </div>
 
-                    <!-- Kontener na wszystkie gratisowe olejki -->
                     <div id="all-gratis-container" class="flex flex-wrap justify-center items-end gap-2 p-2">
-                        <!-- Cztery standardowe olejki -->
                         <div id="gratis-image-1" class="bg-white/50 p-2 rounded-lg shadow-inner w-20 h-28 flex items-center justify-center">
                             <img src="images/olejek-gratis-1.png" alt="Gratisowy olejek 1" class="max-w-full max-h-full object-contain">
                         </div>
@@ -147,13 +130,12 @@
                         <div id="gratis-image-4" class="bg-white/50 p-2 rounded-lg shadow-inner w-20 h-28 flex items-center justify-center">
                             <img src="images/olejek-gratis-4.png" alt="Gratisowy olejek 4" class="max-w-full max-h-full object-contain">
                         </div>
-                        <!-- Jeden wyższy roll-on -->
                         <div id="gratis-rollon" class="bg-white/50 p-2 rounded-lg shadow-inner w-20 h-36 flex items-center justify-center">
                              <img src="images/rollon-gratis.png" alt="Gratisowy roll-on" class="max-w-full max-h-full object-contain">
                         </div>
                     </div>
                 </div>
-                <p class="text-xs text-gray-500 mt-2 text-center">*(Obowiązuje do 30 czerwca 2025, przy zamówieniu LRP lub pierwszym zamówieniu za 150PV)</p>
+                <p class="text-xs text-gray-500 mt-2 text-center">*Złóż jedno zamówienie na 200 PV lub więcej do 30 września 2025 r.</p>
             </div>
         </main>
 
@@ -208,4 +190,3 @@
 
 </body>
 </html>
-
